@@ -1,6 +1,6 @@
 $(document).ready(function(){
 
-  // getNewCorgi()
+  getNewCorgi()
 
   $('a').click(function(e){
     e.preventDefault();
@@ -16,17 +16,16 @@ $(document).ready(function(){
 
 
 function changeLikeStatus(like){
-  console.log(like.like);
- corgiId = "571a599cfca0fd67b073e5bb"
+    var corgiId = window.location.hash.substring(1)
       $.ajax({
       url: '/corgis/' + corgiId,
       method: 'PUT',
-      data: { like: '' }
+      data: { like: like.like }
     })
   .done(function(data, textStatus) {
     getNewCorgi();
   })
-  .fail(function() {
+  .fail(function(data, textStatus) {
     console.log("fail " + data);
     console.log("ERROR status: " + textStatus);
   });
@@ -38,9 +37,8 @@ function getNewCorgi(){
       dataType: 'json'
     })
       .done(function(data, textStatus){
-        console.log(data.url);
         $('img').attr('src', data.url);
-        $(this).attr('href', $(this).attr('href') + data.id);
+        window.location.hash = data._id;
       })
       .fail(function(data, textStatus){
         console.log("fail " + data);
