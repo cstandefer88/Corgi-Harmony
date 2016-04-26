@@ -2,7 +2,6 @@ $(document).ready(function(){
 
  // getNewCorgi()
 
-<<<<<<< HEAD
  $('a').click(function(e){
    e.preventDefault();
    e.stopPropagation();

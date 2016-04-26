@@ -19,7 +19,7 @@ router.get('/corgi', function(req, res, next) {
         var corgi = corgis[randomNumber]
         res.json(corgi);
       }
-    }); 
+    });
   });
 
 
@@ -33,8 +33,14 @@ router.put('/:id', function(req, res, next) {
 
 
 router.put('/:id', function(req, res, next) {
-  var id = req.params.id;
-
+  var like = req.params.like;
+  Corgi.findOneAndUpdate(like, req.body, { upsert: true}, function(err, corgi) {
+    if (err) {
+      return res.status(500).send(err);
+    } else {
+      res.json(corgi);
+    }
+  })
 
 })
 
