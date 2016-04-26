@@ -7,25 +7,24 @@ $(document).ready(function(){
     e.stopPropagation();
     console.log('working');
     getNewCorgi()
-    //changeLikeStatus();
+    changeLikeStatus($(this).data());
     // changeLikeStatus()
 
   })
-
-
 });
 
 
 
-function changeLikeStatus(){
+function changeLikeStatus(like){
+  console.log(like.like);
  corgiId = "571a599cfca0fd67b073e5bb"
       $.ajax({
       url: '/corgis/' + corgiId,
       method: 'PUT',
-      data: { id:"571a599cfca0fd67b073e5bb",  like: true }
+      data: { like: '' }
     })
   .done(function(data, textStatus) {
-    //getNewCorgi();
+    getNewCorgi();
   })
   .fail(function() {
     console.log("fail " + data);
