@@ -15,9 +15,10 @@ $(document).ready(function(){
 
 
 function changeLikeStatus(like){
-    var corgiId = window.location.hash.substring(1)
+    var corgiId = "?id=" + window.location.hash.substring(1)
+    var url = '/corgis/corgi/' + corgiId;
       $.ajax({
-      url: '/corgis/' + corgiId,
+      url: '/corgis/corgi/571a599cfca0fd67b073e5bb',
       method: 'PUT',
       data: { like: like.like }
     })
