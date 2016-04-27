@@ -23,7 +23,7 @@ router.get('/corgi', function(req, res, next) {
   });
 
 
-router.put('/corgis/:id', function(req, res, next) {
+router.put('/corgi/:id', function(req, res, next) {
   var id = req.params.id;
   Corgi.findByIdAndUpdate(id, { $set: req.body }, function (err, corgi) {
     if (err) return res.status(500).send(err);
