@@ -4,7 +4,8 @@ body{
 
 nav{
   text-align: center;
-  background:#555;
+  background-color: black;
+  opacity: .80;
   margin-top:0px;
   padding: 5px;
   color:bold steelblue;
@@ -12,4 +13,19 @@ nav{
 
 .container{
   padding-top: 30px;
+}
+#dogName{
+  color:red;
+  font-size: 30px;
+}
+#dogImageContainer img{
+  margin-top: 50px;
+  height: 400px;
+  width: 400px;
+
+}
+#buttons{
+  margin-top: 50px;
+  background-color: black;
+  opacity: .80;
 }
