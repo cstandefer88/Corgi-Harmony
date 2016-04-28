@@ -14,7 +14,7 @@ nav{
 .container{
   padding-top: 30px;
 }
-#dogName{
+.dogAttribute{
   color:red;
   font-size: 30px;
 }

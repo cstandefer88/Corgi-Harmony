@@ -40,6 +40,8 @@ function getNewCorgi(){
     })
       .done(function(data, textStatus){
         $('img').attr('src', data.url);
+        $('#dogAge').text(data.age);
+        $('#dogName').text(data.name);
         window.location.hash = data._id;
       })
       .fail(function(data, textStatus){
